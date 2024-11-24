@@ -1,0 +1,27 @@
+﻿@page "/"
+@inject ITarotFactory tarotFactory
+
+<PageTitle>Tarot</PageTitle>
+
+@{
+    var tarot = tarotFactory.Create();
+    var isReversed = new Random().Next(0, 2) == 0;
+
+    var tarotImageUri = $"images/popart/{tarot.Short}.webp";
+}
+
+
+@if (isReversed) {
+    <div id="tarot">
+        <img class="reversed" src="@tarotImageUri" />
+        <p>@tarot.Name, reversed</p>
+        <h1>@tarot.Reversed</h1>
+    </div>
+}
+else {
+    <div id="tarot">
+        <img src="@tarotImageUri" />
+        <p>@tarot.Name, upright</p>
+        <h1>@tarot.Upright</h1>
+    </div>
+}

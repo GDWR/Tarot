@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.reversed {
+    transform: rotate(180deg);
+}
+
+#tarot {
+    width: fit-content;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+    h1 {
+        font-size: 2rem;
+        font-family: Playfair Display, serif;
+    }
+    
+    img {
+        border-radius: 10px;
+        min-height:512px;
+        height: 512px;
+        
+        margin-bottom: 1rem;
+    }
+}
+
