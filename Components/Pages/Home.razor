@@ -10,12 +10,13 @@
     var tarotImageUri = $"images/popart/{tarot.Short}.webp";
 }
 
-
 @if (isReversed) {
     <div id="tarot">
         <img class="reversed" src="@tarotImageUri" />
         <p>@tarot.Name, reversed</p>
         <h1>@tarot.Reversed</h1>
+        <p>@string.Join(", ", tarot.ReversedKeywords)</p>
+
     </div>
 }
 else {
@@ -23,5 +24,6 @@ else {
         <img src="@tarotImageUri" />
         <p>@tarot.Name, upright</p>
         <h1>@tarot.Upright</h1>
+        <p>@string.Join(", ", tarot.UprightKeywords)</p>
     </div>
 }
